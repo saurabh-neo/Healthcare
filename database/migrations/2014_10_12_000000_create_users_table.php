@@ -14,13 +14,38 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->increments('patient_id');
+            $table->string('patient_name');
             $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+
         });
+
+        DB::table('users')->insert(
+            array(
+                    'cid'=> '1',
+                    'name' => 'Saurabh',
+                    'email' => 'neo@domain.com',
+                    'password' => 'neo'
+                )
+        );
+
+        DB::table('users')->insert(
+            array(
+                    'cid'=> '2',
+                    'name' => 'Satyajeet',
+                    'email' => 'jeet@domain.com',
+                    'password' => '222'
+                )
+        );
+        DB::table('users')->insert(
+            array(
+                    'cid'=> '3',
+                    'name' => 'Trin',
+                    'email' => 'trin@domain.com',
+                    'password' => '333'
+                )
+        );
+
     }
 
     /**

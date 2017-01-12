@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="dist/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="dist/css/style.css">
+		<link rel="stylesheet" type="text/css" href="dist/css/custom.css">
 		
 	</head>
 	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -127,6 +128,13 @@
 						<h4><strong>Billing Address</strong></h4>
 						<div class="" style="max-width:800px;padding:60px 20px;border:1px solid blue;border-radius: 25px;">
 							<div class="form-group">
+								<div class="material-switch">
+									<span class="control-label col-sm-3" style="margin-left:20px"><strong>Copy Physical Address</strong></span>
+									<input id="checkbox1" name="checkbox1" onchange="copyvals(this)" type="checkbox"/>
+									<label for="checkbox1" class="label-info"></label>
+								</div><br>
+							</div>
+							<div class="form-group">
 								<label for="name" class ="control-label col-sm-3">First name</label>
 								<div class="col-sm-8">
 									<input type="name" class="form-control" id="name" placeholder="Enter name">
@@ -207,6 +215,13 @@
 						<h4><strong>Emergency Contact 1</strong></h4>
 						<div class="" style="max-width:800px;padding:60px 20px;border:1px solid blue;border-radius: 25px;">
 							<div class="form-group">
+								<div class="material-switch">
+									<span class="control-label col-sm-3" style="margin-left:20px"><strong>Copy Physical Address</strong></span>
+									<input id="checkbox2" name="checkbox2" onchange="copyvals(this)" type="checkbox"/>
+									<label for="checkbox2" class="label-info"></label>
+								</div><br>
+							</div>						
+							<div class="form-group">
 								<label for="name" class ="control-label col-sm-3">First name</label>
 								<div class="col-sm-8">
 									<input type="name" class="form-control" id="name" placeholder="Enter name">
@@ -236,6 +251,14 @@
 						<h4><strong>Emergency Contact 2</strong></h4>
 						<div class="" style="max-width:800px;padding:60px 20px;border:1px solid blue;border-radius: 25px;">
 							<div class="form-group">
+								<div class="material-switch">
+									<span class="control-label col-sm-3" style="margin-left:20px"><strong>Copy Physical Address</strong></span>
+									<input id="checkbox3" name="checkbox3" onchange="copyvals(this)" type="checkbox"/>
+									<label for="checkbox3" class="label-info"></label>
+								</div><br>
+							</div>
+							
+							<div class="form-group">
 								<label for="name" class ="control-label col-sm-3">First name</label>
 								<div class="col-sm-8">
 									<input type="name" class="form-control" id="name" placeholder="Enter name">
@@ -264,6 +287,13 @@
 						
 						<h4><strong>Emergency Contact 3</strong></h4>
 						<div class="" style="max-width:800px;padding:60px 20px;border:1px solid blue;border-radius: 25px;">
+							<div class="form-group">
+								<div class="material-switch">
+									<span class="control-label col-sm-3" style="margin-left:20px"><strong>Copy Physical Address</strong></span>
+									<input id="checkbox4" name="checkbox4" onchange="copyvals(this)" type="checkbox"/>
+									<label for="checkbox4" class="label-info"></label>
+								</div><br>
+							</div>
 							<div class="form-group">
 								<label for="name" class ="control-label col-sm-3">First name</label>
 								<div class="col-sm-8">
