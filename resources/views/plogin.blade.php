@@ -27,7 +27,10 @@
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
-								<a class="navbar-brand" href="#"><img src="{{asset('dist/img/logo.png')}}" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
+								<a class="navbar-brand" href="#">
+									<!i class="fa fa-plus-square fa-2x" style="color:red;margin-top:-140px;" aria-hidden="true"></i>
+									<img src="{{asset('dist/img/logo.png')}}" class="img-responsive" style="width: 140px; margin-top: -16px;">
+								</a>
 							</div>
 							<div class="collapse navbar-collapse navbar-right" id="myNavbar">
 								<ul class="nav navbar-nav">
@@ -44,15 +47,16 @@
 				<div class="container">
 					<div class="row">
 						<div class="banner-info">
-							<div class="banner-logo text-center">
-								<img src="{{asset('dist/img/logo.png')}}" style="margin-top:-140px;" class="img-responsive">
+							<div class="banner-logo text-center" style="margin-top:;">
+								<!img src="{{asset('dist/img/logo.png')}}" style="margin-top:-140px;" class="img-responsive">
+								<i class="fa fa-plus-square fa-5x" style="color:red;margin-left:-50px;margin-top:-90px;opacity: 0.20;" aria-hidden="true"></i>
 							</div>
-							<div class=" text-center" style="margin-top:-50px;">
-								<h1 class="white"><strong>Healthcare at your desk!! We Care For You <i class="fa fa-heartbeat" style="color:deeppink" aria-hidden="true"></i></strong></h1><br>
+							<div class=" text-center" style="margin-top:-30px;">
+								<br><h1 class="white"><strong>Healthcare at your desk!! We Care For You <i class="fa fa-heartbeat" style="color:deeppink" aria-hidden="true"></i></strong></h1><br>
 							</div>
 															
-									<div class="container" style="margin-left:300px;">
-										<form class="form-signin col-md-4">
+									<div class="container" style="width: 350px; margin: 0 auto;">
+										<form class="form-signin">
 											<h2 class="banner-text text-center form-signin-heading">Patient Login</h2><br>
 											<label for="inputEmail" class="sr-only">Patient_ID</label>
 											<input type="text" style="background:transparent" id="inputEmail" class="form-control" placeholder="Patient_ID" required="" autofocus=""><br>

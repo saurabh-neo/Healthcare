@@ -15,3 +15,14 @@ Route::get('/', function () {
     return view('plogin');
 });
 
+Route::get('/plogin', function () {
+    return view('plogin');
+});
+
+Route::get('/demographics', function () {
+    return view('demographics');
+});
+
+Route::get('/medicalhistory', function () {
+    return view('medicalhistory');
+});
