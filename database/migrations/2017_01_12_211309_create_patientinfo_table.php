@@ -37,6 +37,6 @@ class CreatePatientinfoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('patient_info');
+        Schema::drop('patientinfo');
     }
 }
