@@ -35,7 +35,7 @@ class PatientController extends Controller
         else
         {
            \Session::flash('message', "User Not Exist/Wrong Credentials");           
-            return \Redirect::back();        
+            return view('plogin');        
         }
     }
 

@@ -23,6 +23,8 @@ Route::post('/plogin','PatientController@validatelogin');
 
 Route::get('/demographics','PatientController@showform');
 
+Route::post('/demographics','DemographicsController@savedata');
+
 Route::get('/medicalhistory', function () {
     return view('medicalhistory');
 });
@@ -34,3 +36,5 @@ Route::post('/medicalhistory', function () {
 Route::post('/logout', function () {
     return view('plogin');
 });
+
+Route::get('/logout','PatientController@validatelogin');
