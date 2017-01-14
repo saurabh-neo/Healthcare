@@ -15,14 +15,22 @@ Route::get('/', function () {
     return view('plogin');
 });
 
-Route::get('/plogin', function () {
-    return view('plogin');
-});
+//Route::get('/plogin','PatientController@validatelogin');
 
-Route::get('/demographics', function () {
-    return view('demographics');
-});
+Route::get('/plogin','PatientController@login');
+
+Route::post('/plogin','PatientController@validatelogin');
+
+Route::get('/demographics','PatientController@showform');
 
 Route::get('/medicalhistory', function () {
     return view('medicalhistory');
+});
+
+Route::post('/medicalhistory', function () {
+    return view('medicalhistory');
+});
+
+Route::post('/logout', function () {
+    return view('plogin');
 });

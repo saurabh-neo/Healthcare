@@ -37,7 +37,33 @@
 									<li class=""><a href="#footer">Contact</a></li>
 								</ul>
 							</div>
-							
+
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                            <li class="dropdown" >
+                                <a href="#" class="dropdown-toggle" style="background:transparent;font-color:#121212" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Session::get('pname') }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu" style="background:transparent;">
+                                    <li>
+                                        <a href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                     </ul>
+
+
 						</div>
 					</div>
 					
@@ -53,14 +79,16 @@
 			
 		</section>
 		<!--/banner-->
-		
-		
+
+		{{$b=Session::get('pid')}}
+
+
 		<!--Demographics Registration-->
 		<section id="demographics" class="">
 			<div class="jumbotron" style="">			
 				
 				<div class="container" id="reg" style="max-width:850px;padding:0px 0px 0px;">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" name="dform" role="form">
 						
 						<h3>Demographics												
 							<button type="submit" style="margin-left:720px;margin-top:-50px" class="btn btn-primary">SAVE</button>
@@ -70,27 +98,84 @@
 						<h4><strong>Basic Details</strong></h4>
 						<div class="" style="max-width:800px;padding:60px 20px;border:1px solid black;border-radius: 25px;">
 							<div class="form-group">
-								<label for="name" class ="control-label col-sm-3">First name</label>
-								<div class="col-sm-8">
-									<input type="name" class="form-control" id="name" placeholder="Enter name">
+								<label for="gender" class ="control-label col-sm-3">Gender</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="gender">
+										<option value="" selected disabled>Please select</option>
+										<option value="Male">Male</option>
+										<option value="Female">Female</option>
+									</select>
 								</div>
 							</div>
+
 							<div class="form-group">
-								<label for="address" class ="control-label col-sm-3">Second name</label>
-								<div class="col-sm-8">
-									<input type="address" class="form-control" id="address" placeholder="Enter address">
+								<label for="race" class ="control-label col-sm-3">Race</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="race">
+										<option value="" selected disabled>Please select</option>
+										@foreach ($race as $i) 
+												<option value="{{$i->categories}}">{{$i->categories}}</option>
+										@endforeach		
+									</select>
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label for="ethnicity" class ="control-label col-sm-3">Ethnicity</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="ethnicity">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($ethn as $i) 
+												<option value="{{$i->type}}">{{$i->type}}</option>
+											@endforeach		
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="pref_language" class ="control-label col-sm-3">Preferred Language</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="pref_language">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($lang as $i) 
+												<option value="{{$i->type}}">{{$i->type}}</option>
+											@endforeach		
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="home_phone" class ="control-label col-sm-3">Home Phone</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="home_phone" placeholder="Enter Home hpone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="cell_phone" class ="control-label col-sm-3">Cell Phone</label>
+								<div class="col-sm-8">
+									<input type="name" class="form-control" name="cell_phone" placeholder="Enter Cell phone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="work_phone" class ="control-label col-sm-3">Work Phone</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="work_phone" placeholder="Enter Work phone">
+								</div>
+							</div>
+
 							<div class="form-group">
 								<label for="email" class ="control-label col-sm-3">Email</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control" id="email" placeholder="Enter email">
+									<input type="email" class="form-control" nmae="email" placeholder="Enter email">
 								</div>
 							</div>
+
 							<div class="form-group">
-								<label for="pwd" class ="control-label col-sm-3">Password</label>
+								<label for="direct_address" class ="control-label col-sm-3">Direct Address</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+									<input type="text" class="form-control" name="direct_address" placeholder="Enter direct address">
 								</div>
 							</div>
 						</div>
@@ -98,35 +183,53 @@
 						
 						<h4><strong>Physical Address</strong></h4>
 						<div class="" style="max-width:800px;padding:60px 20px;border:1px solid blue;border-radius: 25px;">
+							
 							<div class="form-group">
-								<label for="name" class ="control-label col-sm-3">First name</label>
+								<label for="address1" class ="control-label col-sm-3">Address 1</label>
 								<div class="col-sm-8">
-									<input type="name" class="form-control" id="name" placeholder="Enter name">
+									<input type="text" class="form-control" name="address1" name="" placeholder="Enter name here">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="address" class ="control-label col-sm-3">Second name</label>
+								<label for="address2" class ="control-label col-sm-3">Address 2</label>
 								<div class="col-sm-8">
-									<input type="address" class="form-control" id="address" placeholder="Enter address">
+									<input type="text" class="form-control" name="address2" placeholder="Enter Address2">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="email" class ="control-label col-sm-3">Email</label>
+								<label for="city" class ="control-label col-sm-3">City</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control" id="email" placeholder="Enter email">
+									<input type="text" class="form-control" name="city" placeholder="Enter city">
 								</div>
 							</div>
+
 							<div class="form-group">
-								<label for="pwd" class ="control-label col-sm-3">Password</label>
-								<div class="col-sm-8">
-									<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+								<label for="state" class ="control-label col-sm-3">State</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="state">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($state as $i) 
+												<option value="{{$i->state}}">{{$i->state}}</option>
+											@endforeach		
+									</select>
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label for="zip" class ="control-label col-sm-3">Zip</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="zip" placeholder="Enter zip">
+								</div>
+							</div>
+
 						</div>
 						
 						
 						<h4><strong>Billing Address</strong></h4>
 						<div class="" style="max-width:800px;padding:60px 20px;border:1px solid blue;border-radius: 25px;">
+
 							<div class="form-group">
 								<div class="material-switch">
 									<span class="control-label col-sm-3" style="margin-left:20px"><strong>Copy Physical Address</strong></span>
@@ -134,81 +237,128 @@
 									<label for="checkbox1" class="label-info"></label>
 								</div><br>
 							</div>
+
 							<div class="form-group">
-								<label for="name" class ="control-label col-sm-3">First name</label>
+								<label for="baddress1" class ="control-label col-sm-3">Address 1</label>
 								<div class="col-sm-8">
-									<input type="name" class="form-control" id="name" placeholder="Enter name">
+									<input type="text" class="form-control" name="baddress1" name="" placeholder="Enter name here">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="address" class ="control-label col-sm-3">Second name</label>
+								<label for="baddress2" class ="control-label col-sm-3">Address 2</label>
 								<div class="col-sm-8">
-									<input type="address" class="form-control" id="address" placeholder="Enter address">
+									<input type="text" class="form-control" name="baddress2" placeholder="Enter Address2">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="email" class ="control-label col-sm-3">Email</label>
+								<label for="bcity" class ="control-label col-sm-3">City</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control" id="email" placeholder="Enter email">
+									<input type="text" class="form-control" name="bcity" placeholder="Enter city">
 								</div>
 							</div>
+
 							<div class="form-group">
-								<label for="pwd" class ="control-label col-sm-3">Password</label>
-								<div class="col-sm-8">
-									<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+								<label for="bstate" class ="control-label col-sm-3">State</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="bstate">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($state as $i) 
+												<option value="{{$i->state}}">{{$i->state}}</option>
+											@endforeach		
+									</select>
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label for="bzip" class ="control-label col-sm-3">Zip</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="bzip" placeholder="Enter zip">
+								</div>
+							</div>
+
 						</div>						
-						
+
+
 						<h3>General</h3>
 						<div class="" style="max-width:800px;padding:60px 20px;border:1px solid blue;border-radius: 25px;">
 							<div class="form-group">
-								<label for="name" class ="control-label col-sm-3">First name</label>
+								<label for="insurance" class ="control-label col-sm-3">Insurance</label>
 								<div class="col-sm-8">
-									<input type="name" class="form-control" id="name" placeholder="Enter name">
+									<input type="text" class="form-control" name="insurance" placeholder="Enter insurance">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="address" class ="control-label col-sm-3">Second name</label>
+								<label for="aboutus" class ="control-label col-sm-3">How Did You Hear About Us</label>
 								<div class="col-sm-8">
-									<input type="address" class="form-control" id="address" placeholder="Enter address">
+									<select class="selectpicker form-control" name="aboutus">
+										<option value="" selected disabled>Please select</option>
+										<option value="Internet">Internet</option>
+										<option value="Friend">Friend</option>
+										<option value="Family">Family</option>
+										<option value="Social Networking">Social Networking</option>
+										<option value="Other">Other</option>
+									</select>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="email" class ="control-label col-sm-3">Email</label>
+								<label for="reference" class ="control-label col-sm-3">Referring Provider</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control" id="email" placeholder="Enter email">
+									<input type="text" class="form-control" name="reference" placeholder="Enter Referring Provider">
 								</div>
 							</div>
 						</div>						
 						
 						
-						<h4><strong>Employer</strong></h4>
+						<h4><strong>Employer : </strong></h4>
 						<div class="" style="max-width:800px;padding:60px 20px;border:1px solid blue;border-radius: 25px;">
 							<div class="form-group">
-								<label for="name" class ="control-label col-sm-3">First name</label>
+								<label for="ename" class ="control-label col-sm-3">Name</label>
 								<div class="col-sm-8">
-									<input type="name" class="form-control" id="name" placeholder="Enter name">
+									<input type="text" class="form-control" name="ename" placeholder="Enter name">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="address" class ="control-label col-sm-3">Second name</label>
+								<label for="eaddress1" class ="control-label col-sm-3">Address 1</label>
 								<div class="col-sm-8">
-									<input type="address" class="form-control" id="address" placeholder="Enter address">
+									<input type="text" class="form-control" name="eaddress1" name="" placeholder="Enter name here">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="email" class ="control-label col-sm-3">Email</label>
+								<label for="eaddress2" class ="control-label col-sm-3">Address 2</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control" id="email" placeholder="Enter email">
+									<input type="text" class="form-control" name="eaddress2" placeholder="Enter Address2">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="pwd" class ="control-label col-sm-3">Password</label>
+								<label for="ecity" class ="control-label col-sm-3">City</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+									<input type="text" class="form-control" name="ecity" placeholder="Enter city">
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label for="estate" class ="control-label col-sm-3">State</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="estate">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($state as $i) 
+												<option value="{{$i->state}}">{{$i->state}}</option>
+											@endforeach		
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="ezip" class ="control-label col-sm-3">Zip</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="ezip" placeholder="Enter zip">
+								</div>
+							</div>
+							
 						</div>						
 						
 						
@@ -220,31 +370,87 @@
 									<input id="checkbox2" name="checkbox2" onchange="copyvals(this)" type="checkbox"/>
 									<label for="checkbox2" class="label-info"></label>
 								</div><br>
-							</div>						
+							</div>
+
 							<div class="form-group">
-								<label for="name" class ="control-label col-sm-3">First name</label>
+								<label for="em1name" class ="control-label col-sm-3">Name</label>
 								<div class="col-sm-8">
-									<input type="name" class="form-control" id="name" placeholder="Enter name">
+									<input type="text" class="form-control" name="em1name" placeholder="Enter name">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="address" class ="control-label col-sm-3">Second name</label>
+								<label for="em1address1" class ="control-label col-sm-3">Address 1</label>
 								<div class="col-sm-8">
-									<input type="address" class="form-control" id="address" placeholder="Enter address">
+									<input type="text" class="form-control" name="em1address1" name="" placeholder="Enter name here">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="email" class ="control-label col-sm-3">Email</label>
+								<label for="em1address2" class ="control-label col-sm-3">Address 2</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control" id="email" placeholder="Enter email">
+									<input type="text" class="form-control" name="em1address2" placeholder="Enter Address2">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="pwd" class ="control-label col-sm-3">Password</label>
+								<label for="em1city" class ="control-label col-sm-3">City</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+									<input type="text" class="form-control" name="em1city" placeholder="Enter city">
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label for="em1state" class ="control-label col-sm-3">State</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="em1state">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($state as $i) 
+												<option value="{{$i->state}}">{{$i->state}}</option>
+											@endforeach		
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em1zip" class ="control-label col-sm-3">Zip</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="em1zip" placeholder="Enter zip">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em1home_phone" class ="control-label col-sm-3">Home Phone</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="em1home_phone" placeholder="Enter Home hpone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em1cell_phone" class ="control-label col-sm-3">Cell Phone</label>
+								<div class="col-sm-8">
+									<input type="name" class="form-control" name="em1cell_phone" placeholder="Enter Cell phone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em1work_phone" class ="control-label col-sm-3">Work Phone</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="em1work_phone" placeholder="Enter Work phone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em1relation" class ="control-label col-sm-3">Relation To Patient</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="em1relation">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($relation as $i) 
+												<option value="{{$i->relation}}">{{$i->relation}}</option>
+											@endforeach		
+									</select>
+								</div>
+							</div>
+
 						</div>						
 						
 						
@@ -259,27 +465,81 @@
 							</div>
 							
 							<div class="form-group">
-								<label for="name" class ="control-label col-sm-3">First name</label>
+								<label for="em2name" class ="control-label col-sm-3">Name</label>
 								<div class="col-sm-8">
-									<input type="name" class="form-control" id="name" placeholder="Enter name">
+									<input type="text" class="form-control" name="em2name" placeholder="Enter name">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="address" class ="control-label col-sm-3">Second name</label>
+								<label for="em2address1" class ="control-label col-sm-3">Address 1</label>
 								<div class="col-sm-8">
-									<input type="address" class="form-control" id="address" placeholder="Enter address">
+									<input type="text" class="form-control" name="em2address1" name="" placeholder="Enter name here">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="email" class ="control-label col-sm-3">Email</label>
+								<label for="em2address2" class ="control-label col-sm-3">Address 2</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control" id="email" placeholder="Enter email">
+									<input type="text" class="form-control" name="em2address2" placeholder="Enter Address2">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="pwd" class ="control-label col-sm-3">Password</label>
+								<label for="em2city" class ="control-label col-sm-3">City</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+									<input type="text" class="form-control" name="em2city" placeholder="Enter city">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em2state" class ="control-label col-sm-3">State</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="em2state">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($state as $i) 
+												<option value="{{$i->state}}">{{$i->state}}</option>
+											@endforeach		
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em2zip" class ="control-label col-sm-3">Zip</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="em2zip" placeholder="Enter zip">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em2home_phone" class ="control-label col-sm-3">Home Phone</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="em2home_phone" placeholder="Enter Home hpone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em2cell_phone" class ="control-label col-sm-3">Cell Phone</label>
+								<div class="col-sm-8">
+									<input type="name" class="form-control" name="em2cell_phone" placeholder="Enter Cell phone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em2work_phone" class ="control-label col-sm-3">Work Phone</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="em2work_phone" placeholder="Enter Work phone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em2relation" class ="control-label col-sm-3">Relation To Patient</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="em2relation">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($relation as $i) 
+												<option value="{{$i->relation}}">{{$i->relation}}</option>
+											@endforeach		
+									</select>
 								</div>
 							</div>
 						</div>						
@@ -294,28 +554,83 @@
 									<label for="checkbox4" class="label-info"></label>
 								</div><br>
 							</div>
+
 							<div class="form-group">
-								<label for="name" class ="control-label col-sm-3">First name</label>
+								<label for="em3name" class ="control-label col-sm-3">Name</label>
 								<div class="col-sm-8">
-									<input type="name" class="form-control" id="name" placeholder="Enter name">
+									<input type="text" class="form-control" name="em3name" placeholder="Enter name">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="address" class ="control-label col-sm-3">Second name</label>
+								<label for="em3address1" class ="control-label col-sm-3">Address 1</label>
 								<div class="col-sm-8">
-									<input type="address" class="form-control" id="address" placeholder="Enter address">
+									<input type="text" class="form-control" name="em3address1" name="" placeholder="Enter name here">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="email" class ="control-label col-sm-3">Email</label>
+								<label for="em3address2" class ="control-label col-sm-3">Address 2</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control" id="email" placeholder="Enter email">
+									<input type="text" class="form-control" name="em3address2" placeholder="Enter Address2">
 								</div>
 							</div>
+							
 							<div class="form-group">
-								<label for="pwd" class ="control-label col-sm-3">Password</label>
+								<label for="em3city" class ="control-label col-sm-3">City</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+									<input type="text" class="form-control" name="em3city" placeholder="Enter city">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em3state" class ="control-label col-sm-3">State</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="em3state">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($state as $i) 
+												<option value="{{$i->state}}">{{$i->state}}</option>
+											@endforeach		
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em3zip" class ="control-label col-sm-3">Zip</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="em3zip" placeholder="Enter zip">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em3home_phone" class ="control-label col-sm-3">Home Phone</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="em3home_phone" placeholder="Enter Home hpone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em3cell_phone" class ="control-label col-sm-3">Cell Phone</label>
+								<div class="col-sm-8">
+									<input type="name" class="form-control" name="em3cell_phone" placeholder="Enter Cell phone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em3work_phone" class ="control-label col-sm-3">Work Phone</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" name="em3work_phone" placeholder="Enter Work phone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="em3relation" class ="control-label col-sm-3">Relation To Patient</label>
+								<div class="col-sm-4">
+									<select class="selectpicker form-control" name="em3relation">
+										<option value="" selected disabled>Please select</option>
+											@foreach ($relation as $i) 
+												<option value="{{$i->relation}}">{{$i->relation}}</option>
+											@endforeach		
+								</select>
 								</div>
 							</div>
 						</div>												
@@ -326,9 +641,8 @@
 							<div class="col-sm-offset-5 col-sm-8">
 								<button type="submit" class="btn btn-primary btn-lg"> SAVE </button>
 							</div>
-						</div>
-						
-						
+						</div>							
+
 						
 					</form>
 				</div>	

@@ -56,12 +56,16 @@
 							</div>
 															
 									<div class="container" style="width: 350px; margin: 0 auto;">
-										<form class="form-signin">
+										<form class="form-signin" action="/plogin" method="POST">
+											{{csrf_field()}}
 											<h2 class="banner-text text-center form-signin-heading">Patient Login</h2><br>
-											<label for="inputEmail" class="sr-only">Patient_ID</label>
-											<input type="text" style="background:transparent" id="inputEmail" class="form-control" placeholder="Patient_ID" required="" autofocus=""><br>
-											<label for="inputPassword" class="sr-only">Password</label>
-											<input type="password" style="background:transparent" id="inputPassword" class="form-control" placeholder="Password" required="">
+											@if (Session::has('message'))
+   											<div class="alert alert-danger">{{ Session::get('message') }}</div>
+											@endif
+											<label for="patient_id" class="sr-only">Patient_ID</label>
+											<input type="text" required style="background:transparent;font-color:white;" id="patient_id" name="patient_id" class="form-control" placeholder="Patient_ID" require autofocus=""><br>
+											<label for="password" class="sr-only">Password</label>
+											<input type="password" style="background:transparent" id="password" name="password" class="form-control" placeholder="Password" required="">
 											<br><button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 										</form>
 									</div>

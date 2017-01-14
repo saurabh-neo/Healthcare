@@ -35,6 +35,30 @@
 									<li class=""><a href="#footer">Contact</a></li>
 								</ul>
 							</div>
+								<!-- Right Side Of Navbar -->
+								<ul class="nav navbar-nav navbar-right">
+									<!-- Authentication Links -->
+										<li class="dropdown" >
+											<a href="#" class="dropdown-toggle" style="background:transparent;font-color:#121212" data-toggle="dropdown" role="button" aria-expanded="false">
+												{{ Session::get('pname') }} <span class="caret"></span>
+											</a>
+
+											<ul class="dropdown-menu" role="menu" style="background:transparent;">
+												<li>
+													<a href="{{ url('/logout') }}"
+														onclick="event.preventDefault();
+																document.getElementById('logout-form').submit();">
+														Logout
+													</a>
+
+													<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+														{{ csrf_field() }}
+													</form>
+												</li>
+											</ul>
+										</li>
+								</ul>
+
 						</div>
 					</div>
 				</nav>

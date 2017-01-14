@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreatePusersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,35 +13,32 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pusers', function (Blueprint $table) {
             $table->increments('patient_id');
             $table->string('patient_name');
             $table->string('password');
 
         });
 
-        DB::table('users')->insert(
+        DB::table('pusers')->insert(
             array(
-                    'cid'=> '1',
-                    'name' => 'Saurabh',
-                    'email' => 'neo@domain.com',
+                    'patient_id'=> '1',
+                    'patient_name' => 'Saurabh',
                     'password' => 'neo'
                 )
         );
 
-        DB::table('users')->insert(
+        DB::table('pusers')->insert(
             array(
-                    'cid'=> '2',
-                    'name' => 'Satyajeet',
-                    'email' => 'jeet@domain.com',
+                    'patient_id'=> '2',
+                    'patient_name' => 'Satyajeet',
                     'password' => '222'
                 )
         );
-        DB::table('users')->insert(
+        DB::table('pusers')->insert(
             array(
-                    'cid'=> '3',
-                    'name' => 'Trin',
-                    'email' => 'trin@domain.com',
+                    'patient_id'=> '3',
+                    'patient_name' => 'Trin',
                     'password' => '333'
                 )
         );
@@ -55,6 +52,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+       Schema::drop('pusers');    
     }
 }
