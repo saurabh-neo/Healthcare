@@ -8,5 +8,6 @@ class patientinfo_social extends Model
 {
     //
         protected $table='patientinfo_social';
+        public $timestamps = false;
 
 }

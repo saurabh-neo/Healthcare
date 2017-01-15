@@ -14,10 +14,10 @@ class CreatePusersTable extends Migration
     public function up()
     {
         Schema::create('pusers', function (Blueprint $table) {
-            $table->increments('patient_id');
+            $table->BigIncrements('patient_id');
             $table->string('patient_name');
             $table->string('password');
-
+            
         });
 
         DB::table('pusers')->insert(

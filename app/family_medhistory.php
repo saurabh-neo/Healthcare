@@ -8,4 +8,6 @@ class family_medhistory extends Model
 {
     //
         protected $table='family_medhistory';
+        public $timestamps = false;
+
 }

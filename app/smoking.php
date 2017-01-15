@@ -8,5 +8,7 @@ class smoking extends Model
 {
     //
                 protected $table='smoking';
+                public $timestamps = false;
+
 
 }

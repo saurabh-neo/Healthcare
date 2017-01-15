@@ -8,4 +8,6 @@ class patient_otherhistory extends Model
 {
     //
         protected $table='patient_otherhistory';
+        public $timestamps = false;
+
 }

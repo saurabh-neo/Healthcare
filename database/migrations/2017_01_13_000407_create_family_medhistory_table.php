@@ -15,9 +15,9 @@ class CreateFamilyMedhistoryTable extends Migration
     {
          Schema::create('family_medhistory', function (Blueprint $table) {
             $table->increments('s_no');
-            $table->integer('patient_id');
-            $table->string('fhistory');
-            $table->string('relation');
+            $table->BigInteger('patient_id');
+            $table->string('fhistory')->nullable();
+            $table->string('relation')->nullable();
         });
     }
 

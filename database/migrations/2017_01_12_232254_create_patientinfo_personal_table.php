@@ -15,16 +15,16 @@ class CreatePatientinfoPersonalTable extends Migration
     {
          Schema::create('patientinfo_personal', function (Blueprint $table) {
             $table->increments('s_no');
-            $table->integer('patient_id');
-            $table->string('insurance');
-            $table->string('aboutus');
-            $table->string('reference');
-            $table->string('ename');
-            $table->string('eaddress1');
-            $table->string('eaddress2');
-            $table->string('ecity');
-            $table->string('estate');
-            $table->integer('ezip');
+            $table->BigInteger('patient_id');
+            $table->string('insurance')->nullable();
+            $table->string('aboutus')->nullable();
+            $table->string('reference')->nullable();
+            $table->string('ename')->nullable();
+            $table->string('eaddress1')->nullable();
+            $table->string('eaddress2')->nullable();
+            $table->string('ecity')->nullable();
+            $table->string('estate')->nullable();
+            $table->BigInteger('ezip')->nullable()->default(0);
         });
     }
 

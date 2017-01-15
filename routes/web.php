@@ -25,11 +25,11 @@ Route::get('/demographics','PatientController@showform');
 
 Route::post('/demographics','DemographicsController@savedata');
 
-Route::get('/medicalhistory', function () {
-    return view('medicalhistory');
+Route::get('/demo', function () {
+    return \Redirect::back();
 });
 
-Route::post('/medicalhistory', function () {
+Route::get('/medicalhistory', function () {
     return view('medicalhistory');
 });
 
@@ -37,4 +37,4 @@ Route::post('/logout', function () {
     return view('plogin');
 });
 
-Route::get('/logout','PatientController@validatelogin');
+Route::post('/logout','PatientController@validatelogin'); //so after wrong credentials it will not give error

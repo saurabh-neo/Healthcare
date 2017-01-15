@@ -15,16 +15,16 @@ class CreateSmokingTable extends Migration
     {
          Schema::create('smoking', function (Blueprint $table) {
             $table->increments('s_no');
-            $table->integer('patient_id');
-            $table->string('smoke_detector');
-            $table->string('smoking_status');
-            $table->string('comments');
-            $table->date('start_date');
-            $table->date('quit_date');
-            $table->string('smoke_exposure');
-            $table->string('co_detector');
-            $table->string('firearms');
-            $table->string('firearms_secured');
+            $table->BigInteger('patient_id');
+            $table->string('smoke_detector')->nullable();
+            $table->string('smoking_status')->nullable();
+            $table->string('comments')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('quit_date')->nullable();
+            $table->string('smoke_exposure')->nullable();
+            $table->string('co_detector')->nullable();
+            $table->string('firearms')->nullable();
+            $table->string('firearms_secured')->nullable();
             
         });
     }

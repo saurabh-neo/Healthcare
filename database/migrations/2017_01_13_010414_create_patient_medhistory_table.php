@@ -15,9 +15,9 @@ class CreatePatientMedhistoryTable extends Migration
     {
          Schema::create('patient_medhistory', function (Blueprint $table) {
             $table->increments('s_no');
-            $table->integer('patient_id');
-            $table->integer('s_no_medhistory');
-            $table->string('medhistory');
+            $table->BigInteger('patient_id');
+            $table->BigInteger('s_no_medhistory')->nullable()->default(0);
+            $table->string('medhistory')->nullable();
         //  $table->string('othermedhistory')->nullable();
             
         });

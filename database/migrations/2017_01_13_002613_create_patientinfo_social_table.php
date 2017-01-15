@@ -15,11 +15,11 @@ class CreatePatientinfoSocialTable extends Migration
     {
          Schema::create('patientinfo_social', function (Blueprint $table) {
             $table->increments('s_no');
-            $table->integer('patient_id');
-            $table->string('marital_status');
-            $table->string('liveswith');
-            $table->string('occupation');
-            $table->string('pets');
+            $table->BigInteger('patient_id');
+            $table->string('marital_status')->nullable();
+            $table->string('liveswith')->nullable();
+            $table->string('occupation')->nullable();
+            $table->string('pets')->nullable();
             
         });
     }

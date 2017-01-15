@@ -34,7 +34,7 @@ class PatientController extends Controller
         }
         else
         {
-           \Session::flash('message', "User Not Exist/Wrong Credentials");           
+           \Session::flash('message', "Wrong Credentials/User Not Exist");           
             return view('plogin');        
         }
     }
@@ -42,6 +42,12 @@ class PatientController extends Controller
 
     public function login(Request $request)
     {
+        return view('plogin');
+    }
+
+    public function logout(Request $request)
+    {
+//        \Session::flush();
         return view('plogin');
     }
 

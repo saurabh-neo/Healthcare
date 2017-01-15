@@ -15,19 +15,19 @@ class CreatePatientinfoHabbitsTable extends Migration
     {
          Schema::create('patientinfo_habbits', function (Blueprint $table) {
             $table->increments('s_no');
-            $table->integer('patient_id');
-            $table->string('daycaretype');
-            $table->integer('daycareperweek');
-            $table->string('curschool');
-            $table->string('avggrades');
-            $table->string('activities');
-            $table->string('helmetusage');
-            $table->string('seatbelt');
-            $table->string('avgdiet');
-            $table->string('numoz');
-            $table->string('water');
-            $table->string('sleep_location');
-            $table->string('sleepfreq');
+            $table->BigInteger('patient_id');
+            $table->string('daycaretype')->nullable();
+            $table->BigInteger('daycareperweek')->nullable()->default(0);
+            $table->string('curschool')->nullable();
+            $table->string('avggrades')->nullable();
+            $table->string('activities')->nullable();
+            $table->string('helmetusage')->nullable();
+            $table->string('seatbelt')->nullable();
+            $table->string('avgdiet')->nullable();
+            $table->string('numoz')->nullable();
+            $table->string('water')->nullable();
+            $table->string('sleep_location')->nullable();
+            $table->string('sleepfreq')->nullable();
             
         });
     }

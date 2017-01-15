@@ -8,5 +8,7 @@ class patient_medhistory extends Model
 {
     //
         protected $table='patient_medhistory';
+        public $timestamps = false;
+
 }
 

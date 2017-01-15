@@ -8,4 +8,6 @@ class emergency_contact extends Model
 {
     //
     protected $table='emergency_contact';
+    public $timestamps = false;
+
 }

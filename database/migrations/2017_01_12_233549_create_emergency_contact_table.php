@@ -15,18 +15,18 @@ class CreateEmergencyContactTable extends Migration
     {
          Schema::create('emergency_contact', function (Blueprint $table) {
             $table->increments('s_no');
-            $table->integer('patient_id');
-            $table->string('contact_type');
-            $table->string('emname');
-            $table->string('emaddress1');
-            $table->string('emaddress2');
-            $table->string('emcity');
-            $table->string('emstate');
-            $table->integer('emzip');
-            $table->integer('emhphone');
-            $table->integer('emcphone');
-            $table->integer('emwphone');
-            $table->string('emrelation');
+            $table->BigInteger('patient_id');
+            $table->string('contact_type')->nullable();
+            $table->string('emname')->nullable();
+            $table->string('emaddress1')->nullable();
+            $table->string('emaddress2')->nullable();
+            $table->string('emcity')->nullable();
+            $table->string('emstate')->nullable();
+            $table->BigInteger('emzip')->nullable()->default(0);
+            $table->BigInteger('emhphone')->nullable()->default(0);
+            $table->BigInteger('emcphone')->nullable()->default(0);
+            $table->BigInteger('emwphone')->nullable()->default(0);
+            $table->string('emrelation')->nullable();
             
         });
     }

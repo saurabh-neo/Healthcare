@@ -52,7 +52,7 @@
 								<i class="fa fa-plus-square fa-5x" style="color:red;margin-left:-50px;margin-top:-90px;opacity: 0.20;" aria-hidden="true"></i>
 							</div>
 							<div class=" text-center" style="margin-top:-30px;">
-								<br><h1 class="white"><strong>Healthcare at your desk!! We Care For You <i class="fa fa-heartbeat" style="color:deeppink" aria-hidden="true"></i></strong></h1><br>
+								<br><h1 class="white"><strong>Healthcare at your desk!! We Care For You <i class="fa fa-heartbeat" style="color:deeppink;opacity: 0.60;" aria-hidden="true"></i></strong></h1><br>
 							</div>
 															
 									<div class="container" style="width: 350px; margin: 0 auto;">
@@ -60,12 +60,12 @@
 											{{csrf_field()}}
 											<h2 class="banner-text text-center form-signin-heading">Patient Login</h2><br>
 											@if (Session::has('message'))
-   											<div class="alert alert-danger">{{ Session::get('message') }}</div>
+   											<div class="alert alert-danger" style="color: #fcfcfc;background-color:transparent;">{{ Session::get('message') }} <i class="fa fa-close" style="color:red;opacity: 0.60;" aria-hidden="true"></i></div>
 											@endif
 											<label for="patient_id" class="sr-only">Patient_ID</label>
-											<input type="text" required style="background:transparent;font-color:white;" id="patient_id" name="patient_id" class="form-control" placeholder="Patient_ID" require autofocus=""><br>
+											<input type="text" required style="color: #fcfcfc;	background:transparent;" id="patient_id" name="patient_id" class="form-control" placeholder="Patient_ID" require autofocus=""><br>
 											<label for="password" class="sr-only">Password</label>
-											<input type="password" style="background:transparent" id="password" name="password" class="form-control" placeholder="Password" required="">
+											<input type="password" style="color: #fcfcfc;background:transparent" id="password" name="password" class="form-control" placeholder="Password" required="">
 											<br><button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 										</form>
 									</div>
@@ -79,6 +79,8 @@
 			</div>
 		</section>
 		<!--/ banner-->
+
+
 		<!--service-->
 		<section id="service" class="section-padding">
 			<div class="container">
@@ -202,7 +204,7 @@
 					</div>
 					<div class="col-md-3 col-sm-3 col-xs-6">
 						<div class="thumbnail"> 
-							<img src="img/doctor1.jpg" alt="..." class="team-img">
+							<img src="{{asset('dist/img/doctor1.jpg')}}" alt="..." class="team-img">
 							<div class="caption">
 								<h3>Jessica Wally</h3>
 								<p>Doctor</p>
@@ -216,7 +218,7 @@
 					</div>
 					<div class="col-md-3 col-sm-3 col-xs-6">
 						<div class="thumbnail"> 
-							<img src="img/doctor2.jpg" alt="..." class="team-img">
+							<img src="{{asset('dist/img/doctor2.jpg')}}" alt="..." class="team-img">
 							<div class="caption">
 								<h3>Iai Donas</h3>
 								<p>Doctor</p>
@@ -230,7 +232,7 @@
 					</div>
 					<div class="col-md-3 col-sm-3 col-xs-6">
 						<div class="thumbnail"> 
-							<img src="img/doctor3.jpg" alt="..." class="team-img">
+							<img src="{{asset('dist/img/doctor3.jpg')}}" alt="..." class="team-img">
 							<div class="caption">
 								<h3>Amanda Denyl</h3>
 								<p>Doctor</p>
@@ -244,7 +246,7 @@
 					</div>
 					<div class="col-md-3 col-sm-3 col-xs-6">
 						<div class="thumbnail"> 
-							<img src="img/doctor4.jpg" alt="..." class="team-img">
+							<img src="{{asset('dist/img/doctor4.png')}}" alt="..." class="team-img">
 							<div class="caption">
 								<h3>Jason Davis</h3>
 								<p>Doctor</p>
@@ -271,37 +273,37 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="testi-details">
 							<!-- Paragraph -->
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p>They Are Best..! Keep It Up..! Nice Job..!</p>
 						</div>
 						<div class="testi-info">
 							<!-- User Image -->
-							<a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
+							<a href="#"><img src="dist/img/thumb.png" alt="" class="img-responsive"></a>
 							<!-- User Name -->
-							<h3>Alex<span>Texas</span></h3>
+							<h3>Neo<span>Matrix</span></h3>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4">
 						<div class="testi-details">
 							<!-- Paragraph -->
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p>Simply Best and Fast, You Guys Doing very great job Keet It Up..!!</p>
 						</div>
 						<div class="testi-info">
 							<!-- User Image -->
-							<a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
+							<a href="#"><img src="dist/img/thumb.png" alt="" class="img-responsive"></a>
 							<!-- User Name -->
-							<h3>Alex<span>Texas</span></h3>
+							<h3>Saurabh<span>S.</span></h3>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4">
 						<div class="testi-details">
 							<!-- Paragraph -->
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p>24x7 Special Service They can cure anything Thanks a Lot</p>
 						</div>
 						<div class="testi-info">
 							<!-- User Image -->
-							<a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
+							<a href="#"><img src="dist/img/thumb.png" alt="" class="img-responsive"></a>
 							<!-- User Name -->
-							<h3>Alex<span>Texas</span></h3>
+							<h3>Dev2<span>dev</span></h3>
 						</div>
 					</div>
 				</div>

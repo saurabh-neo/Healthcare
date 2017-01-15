@@ -15,15 +15,15 @@ class CreatePatientOtherhistoryTable extends Migration
     {
          Schema::create('patient_otherhistory', function (Blueprint $table) {
             $table->increments('s_no');
-            $table->integer('patient_id');
-            $table->string('surgeryyear');
-            $table->string('surgery');
-            $table->string('surgerylocation');
-            $table->string('allergies');
-            $table->string('pharmacy');
-            $table->string('medication');
-            $table->string('medication_strength');
-            $table->string('medication_dose');            
+            $table->BigInteger('patient_id');
+            $table->string('surgeryyear')->nullable();
+            $table->string('surgery')->nullable();
+            $table->string('surgerylocation')->nullable();
+            $table->string('allergies')->nullable();
+            $table->string('pharmacy')->nullable();
+            $table->string('medication')->nullable();
+            $table->string('medication_strength')->nullable();
+            $table->string('medication_dose')->nullable();
             $table->string('othermedhistory')->nullable(); 
         });
     }

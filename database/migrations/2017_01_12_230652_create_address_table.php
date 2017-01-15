@@ -15,13 +15,13 @@ class CreateAddressTable extends Migration
     {
          Schema::create('address', function (Blueprint $table) {
             $table->increments('s_no');
-            $table->integer('patient_id');
-            $table->string('address_type');
+            $table->BigInteger('patient_id');
+            $table->string('address_type')->nullable();
             $table->string('address1');
-            $table->string('address2');
+            $table->string('address2')->nullable();
             $table->string('city');
             $table->string('state');
-            $table->integer('zip');
+            $table->BigInteger('zip');
         });
 
 
