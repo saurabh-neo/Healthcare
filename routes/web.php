@@ -36,8 +36,5 @@ Route::get('/medicalhistory', function () {
 });
 
 
-Route::post('/logout', function () {
-    return view('plogin');
-});
-
-Route::post('/logout','PatientController@validatelogin'); //so after wrong credentials it will not give error
+Route::get('/plogout','MedicalhistoryController@plogt'); //so after wrong credentials it will not give error
+Route::post('/plogout','MedicalhistoryController@plogt'); //so after wrong credentials it will not give error

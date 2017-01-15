@@ -39,7 +39,6 @@
 								<ul class="nav navbar-nav">
 									<li class="active"><a href="{{ url('/demographics') }}">Demographics</a></li>
 									<li class=""><a href="{{ url('/medicalhistory') }}">Medical History</a></li>
-									<li class=""><a href="{{ url('/plogin') }}">Logout</a></li>
 									<li class=""><a href="#footer">Contact</a></li>
 								</ul>
 							</div>
@@ -55,14 +54,14 @@
 
 											<ul class="dropdown-menu nav" role="menu" style="background:transparent;color: #fcfcfc;">
 												<li>
-													<a href="{{ url('/logout') }}"
+													<a href="{{ url('/plogout') }}"
 														onclick="event.preventDefault();
 																document.getElementById('logout-form').submit();"
 																style="background:transparent;color: #fcfcfc;">
 														Logout
 													</a>
 
-													<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+													<form id="logout-form" action="{{ url('/plogout') }}" method="POST" style="display: none;">
 															{{ csrf_field() }}
 													</form>
 												</li>
@@ -89,6 +88,11 @@
 							<div class="col-md-6"><br>	
 								@if (Session::has('demosuccess'))
 								<div class="alert alert-success fade-out" style="color: #fcfcfc;background-color:transparent;">{{ Session::get('demosuccess') }} <i class="fa fa-close" style="opacity: 0.60;" aria-hidden="true"></i></div>
+								@endif
+							<div>
+							<div class="col-md-8"><br>	
+								@if (Session::has('medsuccess'))
+								<div class="alert alert-success fade-out" style="color: #fcfcfc;background-color:transparent;"> The {{ Session::get('medsuccess') }} <i class="fa fa-close" style="opacity: 0.60;" aria-hidden="true"></i></div>
 								@endif
 							<div>
 

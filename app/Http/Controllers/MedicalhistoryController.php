@@ -106,8 +106,15 @@ class MedicalhistoryController extends Controller
                 'sleep_location' => $request->sleep_location,
                 'sleepfreq' => $request->sleepfreq
                 ]
-            );
-            echo "done";
+            );   
+        \Session::set('medsuccess', "Medical History Details Saved Successfully");           
+        return view('medicalhistory',['relation'=>$relation,'medhistory'=>$medhis]);
+    }
 
+
+    public function plogt(Request $request)
+    {
+          \Session::flush();
+        return view('plogin');
     }
 }

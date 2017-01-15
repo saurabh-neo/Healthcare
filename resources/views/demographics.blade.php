@@ -39,7 +39,6 @@
 								<ul class="nav navbar-nav">
 									<li class="active"><a href="{{ url('/demographics') }}">Demographics</a></li>
 									<li class=""><a href="{{ url('/medicalhistory') }}">Medical History</a></li>
-									<li class=""><a href="{{ url('/plogin') }}">Logout</a></li>
 									<li class=""><a href="#footer">Contact</a></li>
 								</ul>
 							</div>
