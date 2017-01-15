@@ -25,6 +25,8 @@ Route::get('/demographics','PatientController@showform');
 
 Route::post('/demographics','DemographicsController@savedata');
 
+Route::post('/medicalhistory','MedicalhistoryController@savemedicaldata');
+
 Route::get('/demo', function () {
     return \Redirect::back();
 });
@@ -32,6 +34,7 @@ Route::get('/demo', function () {
 Route::get('/medicalhistory', function () {
     return view('medicalhistory');
 });
+
 
 Route::post('/logout', function () {
     return view('plogin');

@@ -35,6 +35,7 @@ $(function() {
             gender: "required",
             race: "required",
             ethinicity: "required",
+            pref_language: "required",
             email: {
                 required: true,
                 // Specify that email should be validated
@@ -150,7 +151,7 @@ $(function() {
             em1address2.value = address2.value;
             em1city.value = city.value;
             em1state.value = state.value;
-            em1zip.value.value = zip.value;
+            em1zip.value = zip.value;
             em1home_phone.value = home_phone.value;
             em1work_phone.value = work_phone.value;
             em1cell_phone.value = cell_phone.value;
@@ -172,53 +173,53 @@ $(function() {
     $('#checkbox3').click(function() {
         if ($(this).is(':checked')) {
             // $('#baddress1').val( $('#address1').val() );
-            em1name.value = ename.value;
-            em1address1.value = address1.value;
-            em1address2.value = address2.value;
-            em1city.value = city.value;
-            em1state.value = state.value;
-            em1zip.value.value = zip.value;
-            em1home_phone.value = home_phone.value;
-            em1work_phone.value = work_phone.value;
-            em1cell_phone.value = cell_phone.value;
+            em2name.value = ename.value;
+            em2address1.value = address1.value;
+            em2address2.value = address2.value;
+            em2city.value = city.value;
+            em2state.value = state.value;
+            em2zip.value = zip.value;
+            em2home_phone.value = home_phone.value;
+            em2work_phone.value = work_phone.value;
+            em2cell_phone.value = cell_phone.value;
 
         } else {
 
-            $('#em1address1').val("");
-            $('#em1address2').val("");
-            $('#em1city').val("");
-            $('#em1state').val("");
-            $('#em1zip').val("");
-            $('#em1home_phone').val("");
-            $('#em1work_phone').val("");
-            $('#em1cell_phone').val("");
+            $('#em2address1').val("");
+            $('#em2address2').val("");
+            $('#em2city').val("");
+            $('#em2state').val("");
+            $('#em2zip').val("");
+            $('#em2home_phone').val("");
+            $('#em2work_phone').val("");
+            $('#em2cell_phone').val("");
         }
 
     });
 
-    $('#checkbox2').click(function() {
+    $('#checkbox4').click(function() {
         if ($(this).is(':checked')) {
             // $('#baddress1').val( $('#address1').val() );
-            em1name.value = ename.value;
-            em1address1.value = address1.value;
-            em1address2.value = address2.value;
-            em1city.value = city.value;
-            em1state.value = state.value;
-            em1zip.value.value = zip.value;
-            em1home_phone.value = home_phone.value;
-            em1work_phone.value = work_phone.value;
-            em1cell_phone.value = cell_phone.value;
+            em3name.value = ename.value;
+            em3address1.value = address1.value;
+            em3address2.value = address2.value;
+            em3city.value = city.value;
+            em3state.value = state.value;
+            em3zip.value = zip.value;
+            em3home_phone.value = home_phone.value;
+            em3work_phone.value = work_phone.value;
+            em3cell_phone.value = cell_phone.value;
 
         } else {
 
-            $('#em1address1').val("");
-            $('#em1address2').val("");
-            $('#em1city').val("");
-            $('#em1state').val("");
-            $('#em1zip').val("");
-            $('#em1home_phone').val("");
-            $('#em1work_phone').val("");
-            $('#em1cell_phone').val("");
+            $('#em3address1').val("");
+            $('#em3address2').val("");
+            $('#em3city').val("");
+            $('#em3state').val("");
+            $('#em3zip').val("");
+            $('#em3home_phone').val("");
+            $('#em3work_phone').val("");
+            $('#em3cell_phone').val("");
         }
 
     });

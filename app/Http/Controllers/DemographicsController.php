@@ -6,6 +6,8 @@ use App\Patientinfo;
 use App\patientinfo_personal;
 use App\address;
 use App\emergency_contact;
+use App\medhistory;
+use App\relationship;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,17 +18,20 @@ class DemographicsController extends Controller
     public function savedata(Request $request)
     {
 
-        echo "Heyyyyyyyyyyaaa".$request->email;
+    //    echo " Testing123 Heyyyyyyyyyyaaa".$request->email;
         $pdata = Patientinfo::where('patient_id','=',\Session::get('pid'))->first();
         $addr=address::where('patient_id','=',\Session::get('pid'))->first();
         $personal=patientinfo_personal::where('patient_id','=',\Session::get('pid'))->first();
         $emergc=emergency_contact::where('patient_id','=',\Session::get('pid'))->first();
-
-        echo $request->em1name." is qeuaaaaaaaaaaaaaaaaa";
+  
+        // To Send To Medical History for
+        $relation = relationship::select('s_no','relation')->get();            
+        $medhis = medhistory::select('s_no','mtype')->get();
+      //  echo $request->em1name." is qeuaaaaaaaaaaaaaaaaa";
 
         if(empty($pdata))
         {
-            echo "New Ueserrrrr"." Ethnicity = ".$request->ethnicity;
+  //          echo "New Ueserrrrr"." Ethnicity = ".$request->ethnicity;
 
             Patientinfo::insert(
                 ['patient_id'=>\Session::get('pid'),
@@ -45,7 +50,7 @@ class DemographicsController extends Controller
         }
         if(!empty($pdata))
         {
-            echo "User Already Exist";
+//            echo "User Already Exist";
 
             Patientinfo::where('patient_id','=',\Session::get('pid'))
                         ->update(
@@ -98,6 +103,9 @@ class DemographicsController extends Controller
 
             if(empty($personal))
             {
+                //echo "xipixizipzipzizpzip";
+                    if($request->ezip==NULL)
+                        $request->ezip=0;
                     patientinfo_personal::insert(
                         [
                             'patient_id'=>\Session::get('pid'),
@@ -115,6 +123,9 @@ class DemographicsController extends Controller
             }
             if(!empty($personal))
             {
+                    if($request->ezip==NULL)
+                        $request->ezip=0;
+
                     patientinfo_personal::where('patient_id','=',\Session::get('pid'))
                         ->update(
                             [
@@ -244,7 +255,7 @@ class DemographicsController extends Controller
             }
 
         \Session::flash('demosuccess', "Demographics Details Saved Successfully");           
-        return view('medicalhistory');
+        return view('medicalhistory',['relation'=>$relation,'medhistory'=>$medhis]);
 
     }    
   // end of savedata function

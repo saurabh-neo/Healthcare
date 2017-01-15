@@ -86,7 +86,14 @@
 									</div>		
 							</div>
 						</div>
+				<div class="col-md-6" style="margin-top:-30px;"><br>	
+					<br><br><h3>Fill The Details Carefully<br><br>
+					If You Are Existing User your old data will be updated with new data</h3>
 					</div>
+				<div>
+
+					</div>
+
 				</div>
 
 
@@ -166,7 +173,7 @@
 							<div class="form-group">
 								<label for="home_phone" class ="control-label col-sm-3">Home Phone</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="home_phone" name="home_phone" placeholder="Enter Home hpone">
+									<input type="text" required class="form-control" id="home_phone" name="home_phone" placeholder="Enter Home hpone">
 								</div>
 							</div>
 
@@ -180,7 +187,7 @@
 							<div class="form-group">
 								<label for="work_phone" class ="control-label col-sm-3">Work Phone</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="work_phone" name="work_phone" placeholder="Enter Work phone">
+									<input type="text" required class="form-control" id="work_phone" name="work_phone" placeholder="Enter Work phone">
 								</div>
 							</div>
 
@@ -252,7 +259,7 @@
 							<div class="form-group">
 								<div class="material-switch">
 									<span class="control-label col-sm-3" style="margin-left:20px"><strong>Copy Physical Address</strong></span>
-									<input id="checkbox1" name="checkbox1" type="checkbox"/>
+									<input id="checkbox1" required name="checkbox1" type="checkbox"/>
 									<label for="checkbox1" class="label-info"></label>
 								</div><br>
 							</div>

@@ -47,3 +47,11 @@
 }
 
 
+
+.checkbox {
+  padding-left: 60px;
+   }
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 6px; }
