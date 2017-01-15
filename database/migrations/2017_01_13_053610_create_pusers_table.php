@@ -43,6 +43,13 @@ class CreatePusersTable extends Migration
                 )
         );
 
+        DB::table('pusers')->insert(
+            array(
+                    'patient_id'=> '4',
+                    'patient_name' => 'CM_Technologies',
+                    'password' => '444'
+                )
+        );
     }
 
     /**

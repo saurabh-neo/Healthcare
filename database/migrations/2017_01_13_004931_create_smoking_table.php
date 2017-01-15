@@ -19,8 +19,8 @@ class CreateSmokingTable extends Migration
             $table->string('smoke_detector')->nullable();
             $table->string('smoking_status')->nullable();
             $table->string('comments')->nullable();
-            $table->date('start_date')->nullable();
-            $table->date('quit_date')->nullable();
+            $table->string('start_date')->nullable();
+            $table->string('quit_date')->nullable();
             $table->string('smoke_exposure')->nullable();
             $table->string('co_detector')->nullable();
             $table->string('firearms')->nullable();

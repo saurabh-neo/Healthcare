@@ -37,10 +37,17 @@
 							
 							<div class="collapse navbar-collapse navbar-right" id="myNavbar">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="{{ url('/demographics') }}">Demographics</a></li>
-									<li class=""><a href="{{ url('/medicalhistory') }}">Medical History</a></li>
+									<li class=""><a href="{{url('/demographics')}}" onclick="event.preventDefault();document.getElementById('logout-form2').submit();">Demographics</a></li>
+									<li class="active"><a href="{{ url('/medicalhistory') }}" onclick="event.preventDefault();document.getElementById('logout-form3').submit();">Medical History</a></li>
 									<li class=""><a href="#footer">Contact</a></li>
 								</ul>
+									<form id="logout-form2" action="{{ url('/demographics') }}" method="GET" style="display: none;">
+										{{ csrf_field() }}
+									</form>
+									<form id="logout-form3" action="{{ url('/medicalhistory') }}" method="GET" style="display: none;">
+										{{ csrf_field() }}
+									</form>
+
 							</div>
 
 

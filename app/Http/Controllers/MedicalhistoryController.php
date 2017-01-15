@@ -28,7 +28,7 @@ class MedicalhistoryController extends Controller
         foreach($request->mtype as $type)
         {
             $sno = medhistory::where('mtype','=',$type)->first();                
-            echo $sno->s_no;
+//            echo $sno->s_no;
             patient_medhistory::insert(
                 ['patient_id'=>\Session::get('pid'),
                 's_no_medhistory'=>$sno->s_no,
@@ -41,8 +41,8 @@ class MedicalhistoryController extends Controller
        foreach($request->fmtype as $ftype)
         {
             $sno = medhistory::where('mtype','=',$ftype)->first();                
-            echo $sno->s_no;
-            echo " \nrelin".$request->relation[$sno->s_no];
+//            echo $sno->s_no;
+  //          echo " \nrelin".$request->relation[$sno->s_no];
             family_medhistory::insert(
                 ['patient_id'=>\Session::get('pid'),
                 'fhistory'=>$ftype,
@@ -111,10 +111,16 @@ class MedicalhistoryController extends Controller
         return view('medicalhistory',['relation'=>$relation,'medhistory'=>$medhis]);
     }
 
-
-    public function plogt(Request $request)
+    public function view(Request $request)
     {
-          \Session::flush();
+       if(\Session::has('pid'))
+        {
+          // To Send To Medical History for
+              $relation = relationship::select('s_no','relation')->get();            
+              $medhis = medhistory::select('s_no','mtype')->get();
+             return view('medicalhistory',['relation'=>$relation,'medhistory'=>$medhis]);
+        }
+        else
         return view('plogin');
     }
 }

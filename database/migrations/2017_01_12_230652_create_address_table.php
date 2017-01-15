@@ -21,7 +21,7 @@ class CreateAddressTable extends Migration
             $table->string('address2')->nullable();
             $table->string('city');
             $table->string('state');
-            $table->BigInteger('zip');
+            $table->BigInteger('zip')->nullable()->default(0);
         });
 
 

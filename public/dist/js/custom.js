@@ -36,6 +36,7 @@ $(function() {
             race: "required",
             ethinicity: "required",
             pref_language: "required",
+            cell_phone: "required",
             email: {
                 required: true,
                 // Specify that email should be validated
@@ -43,12 +44,6 @@ $(function() {
                 email: true
             },
             home_phone: {
-                digits: true,
-                minlength: 10,
-                maxlength: 10
-            },
-            cell_phone: {
-                required: true,
                 digits: true,
                 minlength: 10,
                 maxlength: 10
@@ -61,13 +56,26 @@ $(function() {
             address1: {
                 required: true,
             },
+            baddress1: {
+                required: true,
+            },
             city: {
+                required: true,
+            },
+            bcity: {
                 required: true,
             },
             state: {
                 required: true,
             },
+            bstate:{
+              required: true,
+            },
             zip: {
+                digits: true,
+                required: true,
+            },
+            bzip: {
                 digits: true,
                 required: true,
             },
@@ -96,6 +104,8 @@ $(function() {
             city: "Please Enter Your City",
 
             state: "Select Your State",
+            
+            bstate: "Select Your State",
 
             zip: "Enter zip code"
 

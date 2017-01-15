@@ -27,7 +27,6 @@ class DemographicsController extends Controller
         // To Send To Medical History for
         $relation = relationship::select('s_no','relation')->get();            
         $medhis = medhistory::select('s_no','mtype')->get();
-      //  echo $request->em1name." is qeuaaaaaaaaaaaaaaaaa";
 
         if(empty($pdata))
         {
@@ -145,8 +144,6 @@ class DemographicsController extends Controller
             
             if(empty($emergc))
             {
-//                echo " emzip VALUE IS ".$request->em1zip;
-  //                  echo " Hphone".$request->em1home_phone." in emrgy ".$request->em1zip;
                     if($request->em1zip==NULL)
                         $request->em1zip=0;
                     if($request->em1home_phone==NULL)
@@ -236,6 +233,16 @@ class DemographicsController extends Controller
 
        if(!empty($emergc))
             {
+                                if($request->em1zip==NULL)
+                                    $request->em1zip=0;
+                                if($request->em1home_phone==NULL)
+                                    $request->em1home_phone=0;
+                                if($request->em1cell_phone==NULL)
+                                    $request->em1cell_phone=0;
+                                if($request->em1work_phone==NULL)
+                                    $request->em1work_phone=0;
+
+
                     emergency_contact::where('patient_id','=',\Session::get('pid'))
                         ->update(
                             [
@@ -254,10 +261,12 @@ class DemographicsController extends Controller
                          );
             }
 
-        \Session::flash('demosuccess', "Demographics Details Saved Successfully");           
+        \Session::flash('demosuccess', "Demographics Details Saved/Updated Successfully");           
         return view('medicalhistory',['relation'=>$relation,'medhistory'=>$medhis]);
 
     }    
   // end of savedata function
+
+
 
 }

@@ -27,14 +27,8 @@ Route::post('/demographics','DemographicsController@savedata');
 
 Route::post('/medicalhistory','MedicalhistoryController@savemedicaldata');
 
-Route::get('/demo', function () {
-    return \Redirect::back();
-});
+Route::get('/medicalhistory','MedicalhistoryController@view');
 
-Route::get('/medicalhistory', function () {
-    return view('medicalhistory');
-});
+Route::get('/plogout','PatientController@plogt'); //so after wrong credentials it will not give error
 
-
-Route::get('/plogout','MedicalhistoryController@plogt'); //so after wrong credentials it will not give error
-Route::post('/plogout','MedicalhistoryController@plogt'); //so after wrong credentials it will not give error
+Route::post('/plogout','PatientController@plogt'); //so after wrong credentials it will not give error

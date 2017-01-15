@@ -39,21 +39,34 @@ class PatientController extends Controller
         }
     }
 
+        public function showform(Request $request)
+        {
+                    if(\Session::has('pid'))
+                {
+                    $lang=language::select('s_no','type')->get();  //condition syntax: ->where('s_no','=','2')->get();
+                    $ethn=ethnicity::select('s_no','type')->get();
+                    $race=race::select('s_no','categories')->get();
+                    $state=State::select('s_no','state')->get();
+                    $relation=relationship::select('s_no','relation')->get();            
+                    
+                    return view('demographics',['lang'=>$lang,'ethn'=>$ethn,'race'=>$race,'state'=>$state,'relation'=>$relation]);
+                }
+                else
+                return view('plogin');
+        }
 
-    public function login(Request $request)
-    {
-        return view('plogin');
-    }
 
     public function logout(Request $request)
     {
-//        \Session::flush();
+        \Session::flush();
         return view('plogin');
     }
 
-    public function showform(Request $request)
+
+    public function plogt(Request $request)
     {
-        return view('demographics');
+          \Session::flush();
+        return view('plogin');
     }
 
 

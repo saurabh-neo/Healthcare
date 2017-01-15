@@ -20,9 +20,9 @@ class CreatePatientinfoTable extends Migration
             $table->string('race');
             $table->string('ethinicity');
             $table->string('pref_language');
-            $table->BigInteger('home_phone')->nullable();
-            $table->BigInteger('cell_phone')->nullable();
-            $table->BigInteger('work_phone')->nullable();
+            $table->BigInteger('home_phone')->nullable()->default(0);
+            $table->BigInteger('cell_phone')->nullable()->default(0);
+            $table->BigInteger('work_phone')->nullable()->default(0);
             $table->string('email')->nullable();
             $table->string('direct_address')->nullable();
 

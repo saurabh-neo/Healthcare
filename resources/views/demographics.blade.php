@@ -37,10 +37,16 @@
 							
 							<div class="collapse navbar-collapse navbar-right" id="myNavbar">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="{{ url('/demographics') }}">Demographics</a></li>
-									<li class=""><a href="{{ url('/medicalhistory') }}">Medical History</a></li>
+									<li class="active"><a href="{{url('/demographics')}}" onclick="event.preventDefault();document.getElementById('logout-form2').submit();">Demographics</a></li>
+									<li class=""><a href="{{ url('/medicalhistory') }}" onclick="event.preventDefault();document.getElementById('logout-form3').submit();">Medical History</a></li>
 									<li class=""><a href="#footer">Contact</a></li>
 								</ul>
+									<form id="logout-form2" action="{{ url('/demographics') }}" method="GET" style="display: none;">
+										{{ csrf_field() }}
+									</form>
+									<form id="logout-form3" action="{{ url('/medicalhistory') }}" method="GET" style="display: none;">
+										{{ csrf_field() }}
+									</form>
 							</div>
 
 
@@ -54,14 +60,14 @@
 
 											<ul class="dropdown-menu nav" role="menu" style="background:transparent;color: #fcfcfc;">
 												<li>
-													<a href="{{ url('/logout') }}"
+													<a href="{{ url('/plogout') }}"
 														onclick="event.preventDefault();
 																document.getElementById('logout-form').submit();"
 																style="background:transparent;color: #fcfcfc;">
 														Logout
 													</a>
 
-													<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+													<form id="logout-form" action="{{ url('/plogout') }}" method="POST" style="display: none;">
 															{{ csrf_field() }}
 													</form>
 												</li>
@@ -87,7 +93,7 @@
 						</div>
 				<div class="col-md-6" style="margin-top:-30px;"><br>	
 					<br><br><h3>Fill The Details Carefully<br><br>
-					If You Are Existing User your old data will be updated with new data</h3>
+					If You are an existing user, then your old data will be updated with new data</h3>
 					</div>
 				<div>
 
