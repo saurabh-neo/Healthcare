@@ -3,7 +3,7 @@
  
  This is a very powerful completely MVC based website developed by me,
  using php laravel where user patient can login into system and can enter his/her details in
- 2 sections named as Demographics and Medical History. Everything on this project is dynamic all the data is fetched from straight datatbase dynamically !!
+ 2 sections named as Demographics and Medical History. Everything on this project is dynamic all the data is fetched from straight datatbase dynamically !! [A Live Screenshot provided at end of this read.md]
  I tried to make it on a professional level hope you like it !!!
  
  Used Technologies / Prerequisites :
