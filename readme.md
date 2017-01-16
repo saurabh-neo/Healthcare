@@ -1,5 +1,6 @@
 
-asas HealthCare App is a very powerful completely MVC based website developed by me,
+ ## HealthCare App ##
+ is a very powerful completely MVC based website developed by me,
  using php laravel where user patient can login into system and can enter his/her details in
  2 sections named as Demographics and Medical History. Everything on this project is dynamic !!
  I tried to make it on a professional level hope you like it !!!
