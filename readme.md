@@ -1,33 +1,52 @@
 
- # HealthCare App #
- is a very powerful completely MVC based website developed by me,
+ # **HealthCare App**
+ 
+ This is a very powerful completely MVC based website developed by me,
  using php laravel where user patient can login into system and can enter his/her details in
  2 sections named as Demographics and Medical History. Everything on this project is dynamic !!
  I tried to make it on a professional level hope you like it !!!
  
- Used Technologies a Prerequisites :
-  PHP 7
-  Laravel 5.3
-  Composer
-  Apache Server
-  Bootstrap
-  Jquery
-  HTML5
-  CSS3
+ Used Technologies / Prerequisites :
+ - PHP 7
+ - Laravel 5.3
+ - Composer
+ - Apache Server
+ - Bootstrap
+ - Jquery
+ - HTML5
+ - CSS3
 
 There are total 17 tables and I have already created Database Migrations for you !!!!!
 
 Running it is very simple process you will need composer for it,
-steps to run :
-  1] Go to Healthcare project folder and open .env file and change database name to your db user name and password as:
-  DB_DATABASE=healthcare
-  DB_USERNAME=root
-  DB_PASSWORD=matrix24
-      This is my configuration please change as per your database name
+## steps to run :
+  1] Go to Healthcare project folder and open **.env** file and change database name to your db user name and password as:
+ - DB_DATABASE=healthcare
+ - DB_USERNAME=root
+ - DB_PASSWORD=matrix24
+  
+This is my configuration please change as per your database name
   
   2] open terminal and go to project folder and type command :
   
-    #  php artisan migrate 
+    ##  **php artisan migrate** 
   
-    this command will create all 17 tables of database with dummy data inserted for testingass
+   This command will create all 17 tables of database with dummy data inserted for testing
 as
+  3] Run Command
+  
+  ## **php artisan serve** 
+  This will start server
+  
+  4] open browser and go to route
+  ## **localhost:8000**   or **localhost:8000/plogin**
+ 
+ 5] To  login use any one of these Patient_Ids in login panel
+ - Patient id    password
+ -    1            neo
+ -    4            444
+ -    3            333
+ -    2            222
+ 
+And voila..!! You are logged in
+
