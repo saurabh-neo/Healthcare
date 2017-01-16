@@ -17,9 +17,9 @@
  - HTML5
  - CSS3
 
-There are total 17 tables, Models for it and I have already created Database Migrations for you !!!!!
+There are total 17 tables, *Models* for it and I have already created **Database Migrations** for you !!!!!
 
-Running it is very simple process you will need composer for it,
+So Running it is very simple process you will need composer for it,
 ## steps to run :
   1] Go to Healthcare project folder and open **.env** file and change database name to your db name where u want to import tables, user name and password as:
  - DB_DATABASE=healthcare
@@ -43,11 +43,11 @@ as
   ## **localhost:8000**   or **localhost:8000/plogin**
  
  5] To  login use any one of these Patient_Ids in login panel
- - Patient id    password
- -    1        =>           neo
- -    4        =>           444
- -    3        =>           333
- -    2        =>           222
+ - Patient_id          password
+ -    1           =>            neo
+ -    4           =>            444
+ -    3           =>            333
+ -    2           =>            222
  
 And voila..!! You are logged in
 Please Do Check my other repositories as well !!
