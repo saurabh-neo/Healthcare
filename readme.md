@@ -3,7 +3,7 @@
  
  This is a very powerful completely MVC based website developed by me,
  using php laravel where user patient can login into system and can enter his/her details in
- 2 sections named as Demographics and Medical History. Everything on this project is dynamic !!
+ 2 sections named as Demographics and Medical History. Everything on this project is dynamic all the data is fetched from straight datatbase dynamically !!
  I tried to make it on a professional level hope you like it !!!
  
  Used Technologies / Prerequisites :
@@ -12,28 +12,29 @@
  - Composer
  - Apache Server
  - Bootstrap
- - Jquery
+ - JQuery
+ - Javascript
  - HTML5
  - CSS3
 
-There are total 17 tables and I have already created Database Migrations for you !!!!!
+There are total 17 tables, Models for it and I have already created Database Migrations for you !!!!!
 
 Running it is very simple process you will need composer for it,
 ## steps to run :
-  1] Go to Healthcare project folder and open **.env** file and change database name to your db user name and password as:
+  1] Go to Healthcare project folder and open **.env** file and change database name to your db name where u want to import tables, user name and password as:
  - DB_DATABASE=healthcare
  - DB_USERNAME=root
  - DB_PASSWORD=matrix24
-  
+ 
 This is my configuration please change as per your database name
   
-  2] open terminal and go to project folder and type command :
+  2] **Create Migrations** open terminal and go to project folder and type command :
   
-    ##  **php artisan migrate** 
+    ##  php artisan migrate 
   
    This command will create all 17 tables of database with dummy data inserted for testing
 as
-  3] Run Command
+  3] **Start Server** Run Command
   
   ## **php artisan serve** 
   This will start server
@@ -43,10 +44,12 @@ as
  
  5] To  login use any one of these Patient_Ids in login panel
  - Patient id    password
- -    1            neo
- -    4            444
- -    3            333
- -    2            222
+ -    1        =>           neo
+ -    4        =>           444
+ -    3        =>           333
+ -    2        =>           222
  
 And voila..!! You are logged in
+Please Do Check my other repositories as well !!
+Happy Coding...!!
 
