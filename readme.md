@@ -33,7 +33,7 @@ This is my configuration please change as per your database name
     ##  php artisan migrate 
   
    This command will create all 17 tables of database with dummy data inserted for testing
-as
+
   3] **Start Server** Run Command
   
   ## **php artisan serve** 
@@ -49,7 +49,7 @@ as
  -    3           =>            333
  -    2           =>            222
  
-And voila..!! You are logged in
+And voila..!! You are logged in :-)
 Please Do Check my other repositories as well !!
 Happy Coding...!!
 
